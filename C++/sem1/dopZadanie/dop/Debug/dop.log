@@ -1,0 +1,3 @@
+﻿  dop.cpp
+D:\prog\C++\dopZadanie\dop\dop.cpp(23,16): warning C4018: <: несоответствие типов со знаком и без знака
+  dop.vcxproj -> D:\prog\C++\dopZadanie\dop\Debug\dop.exe

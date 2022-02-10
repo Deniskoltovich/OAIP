@@ -1,0 +1,2 @@
+D:\prog\C++\lab4\lab4\Debug\lab4.exe
+D:\prog\C++\lab5\lab4\Debug\lab4.exe

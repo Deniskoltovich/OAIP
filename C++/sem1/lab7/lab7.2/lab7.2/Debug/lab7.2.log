@@ -1,0 +1,5 @@
+﻿  lab7.2.cpp
+D:\prog\C++\lab7\lab7.2\lab7.2\lab7.2.cpp(12,17): warning C4018: <: несоответствие типов со знаком и без знака
+D:\prog\C++\lab7\lab7.2\lab7.2\lab7.2.cpp(5,13): warning C4101: len: неиспользованная локальная переменная
+D:\prog\C++\lab7\lab7.2\lab7.2\lab7.2.cpp(5,37): warning C4101: n: неиспользованная локальная переменная
+  lab7.2.vcxproj -> D:\prog\C++\lab7\lab7.2\lab7.2\Debug\lab7.2.exe
