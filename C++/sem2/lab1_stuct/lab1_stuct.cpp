@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 struct Student {
@@ -45,7 +46,7 @@ int main()
 	cout << "Enter any letter:" << endl;
 	cin >> symb;
 	for (int i = 0; i < n; i++) {
-		if (arr[i].surname[0] == symb && arr[i].avr >= 9) {
+		if (arr[i].surname[0] == toupper(symb) && arr[i].avr >= 9) {
 			cout << arr[i].surname << " " << arr[i].initials << " " << arr[i].date << " group " << arr[i].group <<
 				"  phys mark: " << arr[i].phys << ", math mark: " << arr[i].math << ", informatics mark: " << arr[i].inf <<
 				", chemistry mark: " << arr[i].chem << ", average: " << arr[i].avr;
