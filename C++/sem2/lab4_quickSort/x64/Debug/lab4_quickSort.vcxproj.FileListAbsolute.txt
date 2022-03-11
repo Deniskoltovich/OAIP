@@ -1,0 +1,1 @@
+D:\prog\C++\sem2\lab4_quickSort\x64\Debug\lab4_quickSort.exe

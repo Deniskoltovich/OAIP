@@ -1,0 +1,1 @@
+D:\prog\C++\sem2\lab6_queue\x64\Debug\lab6_queue.exe

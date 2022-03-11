@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5cbd4abc-5810-4335-90a8-1e118f8d97d7": {
+      "ProjectGuid": "5cbd4abc-5810-4335-90a8-1e118f8d97d7",
+      "DisplayName": "lab4_quickSort",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
