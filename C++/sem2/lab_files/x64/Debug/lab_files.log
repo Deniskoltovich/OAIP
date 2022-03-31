@@ -1,9 +1,0 @@
-﻿  lab_files.cpp
-D:\prog\C++\sem2\lab_files\lab_files.cpp(28,35): warning C4101: GradesInformatics: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(28,9): warning C4101: GradesPhysic: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(28,69): warning C4101: GroupNumber: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(28,54): warning C4101: AverangeScore: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(28,23): warning C4101: GradesMath: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(27,10): warning C4101: Surname: неиспользованная локальная переменная
-D:\prog\C++\sem2\lab_files\lab_files.cpp(135,9): warning C4101: p: неиспользованная локальная переменная
-  lab_files.vcxproj -> D:\prog\C++\sem2\lab_files\x64\Debug\lab_files.exe

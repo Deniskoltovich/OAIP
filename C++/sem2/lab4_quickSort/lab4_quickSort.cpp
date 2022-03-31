@@ -26,7 +26,6 @@ time_t dateToTimeT(int month, int day, int year) {
     tmp.tm_year = year - 1900;
 
     return mktime(&tmp);
-
 }
 void Load() {
     ifstream in;
@@ -57,25 +56,7 @@ void Print() {
         cout << i + 1 << ")" << ::store_list[i].Item_name << "\t" << "number: " << ::store_list[i].Number << "\tcost : " << ::store_list[i].Cost << "\tdate : " << ::store_list[i].date << endl;
     }
 }
-void CreateData() {
-    int n;
-    store_list.clear();
-    cout << "How many objects do you want to create?" << endl;
-    cin >> n;
-    Store temp_store;
-    for (int i = 0; i < n; i++) {
-        cout << "Enter item's name\n";
-        cin >> temp_store.Item_name;
-        cout << "Enter number\n";
-        cin >> temp_store.Number;
-        cout << "Enter cost\n";
-        cin >> temp_store.Cost;
-        cout << "Enter date\n";
-        cin >> temp_store.date;
-        store_list.push_back(temp_store);
-    }
-    cout << "Done!";
-}
+
 void WriteToFile(string path, vector<Store> vec) {
     ofstream out;
     out.open(path);
@@ -95,22 +76,43 @@ void WriteToFile(string path, vector<Store> vec) {
     out.close();
     cout << "Done!";
 }
+void CreateData() {
+    int n;
+    store_list.clear();
+    cout << "How many objects do you want to create?" << endl;
+    cin >> n;
+    Store temp_store;
+    for (int i = 0; i < n; i++) {
+        cout << "Enter item's name\n";
+        cin >> temp_store.Item_name;
+        cout << "Enter number\n";
+        cin >> temp_store.Number;
+        cout << "Enter cost\n";
+        cin >> temp_store.Cost;
+        cout << "Enter date\n";
+        cin >> temp_store.date;
+        store_list.push_back(temp_store);
+    }
+    cout << "Done!";
+    WriteToFile("file.txt", store_list);
+}
 void Add() {
     Store temp_store;
-    cout << "Enter item's name";
-    getline(cin, temp_store.Item_name);
+    cout << "Enter item's name ";
+    cin >> temp_store.Item_name;
     cout << endl;
-    cout << "Enter number";
+    cout << "Enter number ";
     cin >> temp_store.Number;
     cout << endl;
-    cout << "Enter cost";
+    cout << "Enter cost ";
     cin >> temp_store.Cost;
     cout << endl;
-    cout << "Enter date";
+    cout << "Enter date ";
     cin >> temp_store.date;
     cout << endl;
     store_list.push_back(temp_store);
     cout << "Done!";
+    WriteToFile("file.txt", store_list);
 }
 
 void LinSearch(string key) {
@@ -136,9 +138,9 @@ void Sort(int begin, int end) {
     int rights = end;
     string x = store_list[(rights + left) / 2].Item_name;
     do
-    {
-        while (store_list[rights].Item_name > x) rights--;
+    {  
         while (store_list[left].Item_name < x) left++;
+        while (store_list[rights].Item_name > x) rights--;
         if (left <= rights) {
             Store temp = store_list[rights];
             store_list[rights] = store_list[left];
@@ -194,23 +196,13 @@ void Task(Date date) {
         syear += store_list[i].date[8];
         syear+= store_list[i].date[9];
         year = stoi(syear);
-        ////вычисление номера юлианского дня
-        //int a1 = (14 - month) / 12;
-        //int a2 = (14 - date.month) / 12;
-        //int y1 = year + 4800 - a1;
-        //int y2 = date.year + 4800 - a2;
-        //int m1 = month + 12 * a1 - 3;
-        //int m2 = date.month + 12 * a2 - 3;
-        //int ulian1 = a1 + (153 * m1 + 2) / 5 + 365 * y1 + y1 / 4 - y1 / 100 + y1 / 400 - 32045;
-        //int ulian2 = a2 + (153 * m2 + 2) / 5 + 365 * y2 + y2 / 4 - y2 / 100 + y2 / 400 - 32045;
-        ////
 
         time_t date1 = dateToTimeT(month, day, year);
 
         time_t date2 = dateToTimeT(date.month, date.day, date.year);
-        double sec = difftime(date2, date1);
+        long sec = difftime(date2, date1);
 
-        long days = static_cast<long> (sec / (60 * 60 * 24));
+        long days = sec / (60 * 60 * 24);
         if (days > 30 && store_list[i].Cost > 100000) {
             result.push_back(store_list[i]);
         }
@@ -253,6 +245,9 @@ int main() {
             break;
         case 3:
             WriteToFile("file.txt", store_list);
+            break;
+        case 4:
+            Add();
             break;
         case 5:
             Load();

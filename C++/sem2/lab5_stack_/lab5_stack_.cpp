@@ -4,7 +4,7 @@ using namespace std;
 struct Stack {
 	int data;
 	Stack* next;
-}; // указатель на вершину стека
+};
 
 
 Stack* NewStack(int value) {
@@ -14,15 +14,15 @@ Stack* NewStack(int value) {
 	return stack;
 }
 void Push(Stack*& top, int value) {
-	Stack* tmp_node = new Stack; // создаем вершину 
+	Stack* tmp_node = new Stack;
 	tmp_node->next = top;
-	tmp_node->data = value;// присоединяем ее к предыдущену началу стека
-	top = tmp_node;// объявляем созданную вершину новым началом стека
-	//return top;
+	tmp_node->data = value;
+	top = tmp_node;
 }
-void View(Stack* top) {
+void View(Stack* top)
+{
 	cout << "your stack: ";
-	Stack* temp = top; // устанавливаем указатель на начало стека
+	Stack* temp = top; 
 	while (temp != nullptr)
 	{
 		cout << temp->data << " ";
@@ -45,29 +45,29 @@ void DelStack(Stack*& top) {
 		delete tmp;
 	}
 }
-
 void Task(Stack*& top) {
-	Stack* f = new Stack;
-	f->next = top;
-	top = f;
 
-	Stack* tmp = top;
-	Stack* del;
-	while (tmp->next)
-		if (tmp->next->data % 2 == 0) {
-			del = tmp->next;
-			tmp->next = del->next;
-			delete del;
-		}
-		else
-		{
-			tmp = tmp->next;
-		}
+		Stack* f = new Stack;
+		f->next = top;
+		top = f;
+		Stack* tmp = top;
+		Stack* del;
+		tmp = top;
+		while (tmp->next != NULL)
+			if (tmp->next->data % 2 == 0) {
+				del = tmp->next;
+				tmp->next = del->next;
+				delete del;
+			}
+			else
+			{
+				tmp = tmp->next;
+			}
 
-	top = top->next;
-	delete f;
+		top = top->next;
+		delete f;
 }
-void Sort_info(Stack* top) {
+void Sort_info(Stack*& top) {
 	Stack* t = NULL;
 	Stack* t1;
 	int r;

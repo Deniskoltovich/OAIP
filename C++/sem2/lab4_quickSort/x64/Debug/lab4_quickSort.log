@@ -1,6 +1,7 @@
 ﻿  lab4_quickSort.cpp
-D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(155,34): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(158,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(267,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(242,9): warning C4101: time_int: неиспользованная локальная переменная
+D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(157,34): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(160,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(203,18): warning C4244: инициализация: преобразование "double" в "long", возможна потеря данных
+D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(262,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\prog\C++\sem2\lab4_quickSort\lab4_quickSort.cpp(234,9): warning C4101: time_int: неиспользованная локальная переменная
   lab4_quickSort.vcxproj -> D:\prog\C++\sem2\lab4_quickSort\x64\Debug\lab4_quickSort.exe

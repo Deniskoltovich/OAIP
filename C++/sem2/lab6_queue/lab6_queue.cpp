@@ -15,7 +15,7 @@ void AddToEnd(List*&, int);
 void ViewBegin(List*);
 void ViewEnd(List*);
 void DelList(List*&);
-void Task(List*&);
+void Task(List*&, List*&);
 int menu();
 
 
@@ -56,7 +56,7 @@ int main() {
 			ViewBegin(Begin);
 			break;
 		case 6:
-			Task(Begin);
+			Task(Begin, End);
 			ViewBegin(Begin);
 			break;
 		case 7:
@@ -100,7 +100,7 @@ void AddToEnd(List*& end, int value) {
 
 void ViewBegin(List* begin) {
 	cout << "\nyour list from the begin: ";
-	List* tmp = begin; // устанавливаем указатель на начало списка
+	List* tmp = begin;
 	while (tmp != nullptr)
 	{
 		cout << tmp->data << " ";
@@ -112,12 +112,13 @@ void ViewEnd(List* ptr) {
 	cout << "\nyour list from the end: ";
 	List* p = ptr;
 	while (p->next != NULL)
-		p = p->next;  // переход к концу списка
+		p = p->next; 
 	while (p!=NULL)
 	{
-		cout << p->data << " "; // вывод значения элемента p
-		p = p->prev; // переход к предыдущему узлу
+		cout << p->data << " ";
+		p = p->prev; 
 	}
+	cout << endl;
 		
 }
 void DelList(List*& ptr) {
@@ -130,27 +131,38 @@ void DelList(List*& ptr) {
 	End = Begin = NULL;
 }
 
-
-void Task(List*& begin) {
-	List* f = new List;
-	f->next = begin;
-	begin = f;
-
-	List* tmp = begin;
-	List* del;
-	while (tmp->next)
-		if (tmp->next->data % 2 == 0) {
-			del = tmp->next;
-			tmp->next = del->next;
-			delete del;
+void Task(List*& begin, List*& end) {
+	List* f = begin;
+	while (f != NULL)
+	{
+		if ((f->data % 2 == 0) && (f == begin))
+		{
+			begin = begin->next;
+			begin->prev = NULL;
+			delete f;
+			f = begin;
+			continue;
 		}
 		else
-		{
-			tmp = tmp->next;
-		}
-
-	begin = begin->next;
-	delete f;
+			if ((f->data % 2 == 0) && (f == end))
+			{
+				end = end->prev;
+				end->next = NULL;
+				delete f;
+				f = NULL;
+				continue;
+			}
+			else if (f->data % 2 == 0)
+			{
+				f->prev->next = f->next;
+				f->next->prev = f->prev;
+				List* copy = f;
+				f = f->next;
+				delete copy;
+				continue;
+			}
+		f = f->next;
+	}
 }
 int menu() {
 	int res;
